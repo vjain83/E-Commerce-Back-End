@@ -9,16 +9,16 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
+    attributes: ['id', 'product_name', 'price', 'stock'],
     include: [
       {
         model: Category,
-        attributes: ['id', 'category_name']
+        attributes: ['category_name']
       },
       {
 
         model: Tag,
-        as: 'tag_id',
-        attributes: ['id', 'tag_name']
+        attributes: ['tag_name']
 
       }
 
@@ -36,19 +36,20 @@ router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   Product.findOne({
+    attributes: ['id', 'product_name', 'price', 'stock'],
     where: {
       id: req.params.id
     },
     include: [
       {
         model: Category,
-        attributes: ['id', 'category_name']
+        attributes: ['category_name']
       },
       {
 
         model: Tag,
-        as: 'tag_id',
-        attributes: ['id', 'tag_name']
+        attributes: ['tag_name']
+
       }
 
     ]

@@ -19,6 +19,7 @@ ProductTag.init(
       references: {
         model: 'product',
         key: 'id'
+
       }
     },
     tag_id: {
@@ -26,6 +27,7 @@ ProductTag.init(
       references: {
         model: 'tag',
         key: 'id'
+
       }
     }
 
@@ -35,7 +37,7 @@ ProductTag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'product_tag',
+    modelName: 'productTag',
   }
 );
 
